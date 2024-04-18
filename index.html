@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum Diskusi</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .forum-container {
+      max-width: 800px;
+      margin: 2px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .forum-container h1 {
+      text-align: center;
+    }
+
+    .discussion {
+      margin-top: 50px;
+    }
+
+    .participant-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .participant {
+      margin: 0 10px;
+      text-align: center;
+    }
+
+    .participant img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+
+    .messages {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      max-height: 350px; /* Max height to make it scrollable */
+      overflow-y: scroll;
+      border-radius: 8px;
+    }
+
+    .message {
+      margin-bottom: 10px;
+    }
+
+    .message p {
+      margin: 0;
+    }
+
+    .message img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .message-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .message-content p {
+      margin: 0;
+    }
+
+    .message-form {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    #message-input {
+      flex: 1;
+      padding: 5px;
+      border-radius: 8px 0px 0px 8px;
+    }
+
+    button[type="submit"] {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 0px 8px 8px 0px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* CSS for verified logo */
+    .verified-logo {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+  }
+
+    footer p {
+      color: #888; /* Warna abu-abu */
+      font-size: 10px; /* Ukuran font */
+      margin: 0; /* Hilangkan margin bawaan */
+      text-transform: uppercase; /* Ubah ke huruf besar */
+      letter-spacing: 1px; /* Spasi antar huruf */
+      padding: 5px; /* Padding agar lebih terlihat */
+  }
+  </style>
+</head>
+<body>
+  <div class="forum-container">
+    <h1>Forum Diskusi</h1>
+    <div id="online-users" class="online-users">0 orang sedang online</div>
+    <div class="discussion">
+      <div class="messages" id="messages">
+        <!-- Messages -->
+        <div class="message">
+          <div class="message-content">
+            <img src="Ely Foto.PNG" alt="Profile Picture">
+            <p><strong>Elys <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Haii</p>
+          </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="Ely Foto.PNG" alt="Profile Picture">
+              <p><strong>Elys <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Oh mcm ni forum dia hahaha</p>
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="Kosong.png" alt="Profile Picture">
+              <p><strong>Apasih:</strong> wkwk ga semua orang bisa chat disini ya, kasian juga</p>
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="Kosong.png" alt="Profile Picture">
+              <p><strong>Mentor:</strong> Gini nih kan enak bisa diskusi</p>
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="Xenza ID.jpg" alt="Profile Picture">
+              <p><strong>Xenza ID <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Hai guys, untuk sementara fitur ini dibatasin dulu ya.</p>
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="xenza inves.jpg" alt="Profile Picture">
+              <p><strong>Xenza Inves <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> @Xenza ID gimana sih bang, ayoo dong biar semua member kita bisa chat disini😍.</p>
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="Kosong.png" alt="Profile Picture">
+              <p><strong>Farel M:</strong> @Xenza Inves, bener tuh, gimana sih ini kok dibatasin sih hahaha🤣</p>
+            </div>
+        </div>
+        <div class="message">
+            <div class="message-content">
+              <img src="Ely Foto.PNG" alt="Profile Picture">
+              <p><strong>Elys <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Ngakak banget sama adminnya😭😭😭</p>
+            </div>
+        </div>
+        <div class="message">
+          <div class="message-content">
+            <img src="Jakii.jpg" alt="Profile Picture">
+            <p><strong>Jakii [Owner] <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Udah verified aja ane wkwk🗿</p>
+          </div>
+      </div>
+      <div class="message">
+        <div class="message-content">
+          <img src="Kosong.png" alt="Profile Picture">
+          <p><strong>Anaya12:</strong> Ini untuk apa ya😅</p>
+        </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Naufal:</strong> Tiba tiba ada ini🗿</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Xtnl:</strong> Cara pasang ppnya gimana ya?</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Naufal:</strong> @Xtnl kyknya ga bisa deh, cuman yang ada logo verifnya aja tuh yang ada pp</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Yinjai.jpg" alt="Profile Picture">
+        <p><strong>Maya [Admin] <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Saya juga masuk kt sini rupanya hahaha, dapat verif pula</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="hanabi.jpeg" alt="Profile Picture">
+        <p><strong>Lidya [Admin] <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Tak sangka lah, tiba-tiba ada macam ni pulak😭</p>
+      </div>
+    </div>    
+    <div class="message">
+      <div class="message-content">
+        <img src="Jakii.jpg" alt="Profile Picture">
+        <p><strong>Jakii [Owner] <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> @Xtnl ciee ga ada pp ya wkwk🗿</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Xtnl:</strong> @Jakii Waduh ada ownernya🗿</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Naufal:</strong> @Jakii Tutor supaya ada tulisan owner gitu bg😁</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="xz tower.jpg" alt="Profile Picture">
+        <p><strong>Xenza TWR DGL <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Team saya yang buat forum ini aja ga ada ribut, hadeh...</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Xenza ID.jpg" alt="Profile Picture">
+        <p><strong>Xenza ID <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Jangan di batasi dong bang fiturnya🥲</p>
+      </div>
+    </div>
+    <div class="message">
+    <div class="message-content">
+      <img src="Kosong.png" alt="Profile Picture">
+      <p><strong>Ranges:</strong> ada apa nih rame-rame</p>
+     </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Ely Foto.PNG" alt="Profile Picture">
+        <p><strong>Elys <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Kasian ya, yang bisa akses cuman 50 orang aja</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>masafi :</strong> @Elys nah kan, padahl member sini lebih 10k an kalau ga salah</p>
+       </div>
+      </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+         <p><strong>Rangga :</strong> @Elys lu siapa jir, kok ada verifiednya</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Xtnl:</strong> @Jakii itu Elys siapa bg?</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Kosong.png" alt="Profile Picture">
+        <p><strong>Naufal:</strong> Iya jga ya, siapa elys ini?</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Jakii.jpg" alt="Profile Picture">
+        <p><strong>Jakii [Owner] <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> kok nanya ke saya🗿</p>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-content">
+        <img src="Ely Foto.PNG" alt="Profile Picture">
+        <p><strong>Elys <img src="verif.png" class="verified-logo" alt="Verified Logo" style="width: 15px; height: 15px;">:</strong> Kalian bingung? Ya udah sama lah kita</p>
+      </div>
+    </div>
+    <br>//  Under our maintenance //
+
+
+    
+    
+    
+    <!-- Add more messages here -->
+      </div>
+      <form id="message-form" class="message-form">
+        <textarea id="message-input" placeholder="Fitur ini sedang di batasi" required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </div>
+  </div>
+  <footer style="text-align: center; margin-top: 20px;">
+    <p>&copy; by Xenza Tower Digital</p>
+  </footer>
+  <script>
+    // Default online users count
+    let onlineUsersCount = 5;
+
+    // Function to generate random number between min and max (inclusive)
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to update online users count
+    function updateOnlineUsers() {
+        const onlineUsersElement = document.getElementById('online-users');
+        onlineUsersElement.textContent = onlineUsersCount + ' orang sedang online';
+    }
+
+    // Update online users count every 5 seconds
+    setInterval(() => {
+        onlineUsersCount = getRandomNumber(1, 50); // Generate random number of online users between 1 and 20
+        updateOnlineUsers();
+    }, 3000);
+
+    // Initially update online users count
+    updateOnlineUsers();
+
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const messageInput = document.getElementById('message-input').value.trim();
+
+        if (messageInput === '') {
+            alert('Kamu belum memenuhi syarat untuk menggunakan fitur ini');
+            return;
+        } else {
+            alert('Kamu belum memenuhi syarat untuk menggunakan fitur ini :' + messageInput);
+            // Add your code here to send the message
+        }
+    }
+
+    // Add event listener to form submission
+    const messageForm = document.getElementById('message-form');
+    messageForm.addEventListener('submit', handleFormSubmit);
+</script>
+
+
+</body>
+</html>
